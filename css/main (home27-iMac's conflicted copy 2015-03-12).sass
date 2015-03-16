@@ -1,0 +1,242 @@
+@import 'base'
+@import 'icons'
+
+@font-face
+  font-family: 'Oswald'
+  font-style: normal
+  font-weight: 400
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(http://fonts.gstatic.com/s/oswald/v10/_P8jt3Y65hJ9c4AzRE0V1OvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2')
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
+
+@font-face
+  font-family: 'Open Sans'
+  font-style: normal
+  font-weight: 400
+  src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3ZBw1xU1rKptJj_0jans920.woff2) format('woff2')
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
+
+
+
+
+
+body
+  font-family: 'Open Sans'
+  -webkit-font-smoothing: antialiased
+
+
+
+nav
+  height: 60px
+  background: black
+  color: white
+  text-transform: uppercase
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+  .site-title
+    margin-left: 30px
+
+    a
+      text-decoration: none
+      color: rgba(255,255,255,0.8)
+
+      &:hover
+        color: rgba(255,255,255,1)
+
+  .links
+    margin-right: 30px
+
+    a
+      margin-left: 20px
+      display: inline-block
+      text-decoration: none
+      color: #999
+
+      &:hover
+        color: #ccc
+
+
+
+
+
+header
+  height: 530px
+  background:
+    image: url(/img/banjo.jpg)
+    size: cover
+    color: #ce7545
+  display: flex
+  justify-content: center
+  align-items: center
+
+.title
+  width: 50%
+  text-align: right
+
+  h1
+    font-family: Oswald
+    text-transform: uppercase
+    font-size: 90px
+    color: #34b881
+    margin: 0 0 80px
+    line-height: 0.7
+
+    &:first-line
+      color: black
+
+  .cta
+    display: inline-block
+    background: lighten(#34b881, 2%)
+    text-decoration: none
+    color: white
+    font-weight: 300
+    letter-spacing: 1px
+    padding: 0.5em 1em
+    font-size: 32px
+    line-height: 1
+    box-shadow: 0px 5px 0px darken(#34b881, 10%)
+    border-radius: 3px
+    transition: all 0.2s ease-in-out
+    position: relative
+    top: 0
+
+    &:hover
+      background: lighten(#34b881, 4%)
+
+    &:active
+      top: 5px
+      box-shadow: 0px 0px 0px darken(#34b881, 10%)
+
+
+.boom-title
+  font-size: 70px
+  color: #34b881
+  font-weight: 300
+  text-align: center
+  margin: 80px 0 0
+
+
+
+.three-points
+  display: flex
+  justify-content: space-around
+
+  .blurb
+    width: 20%
+    margin: 100px 0
+    text-align: center
+  i
+    font-size: 80px
+    display: block
+    text-align: center
+    margin: 0 0 50px
+    color: #999
+
+
+.testimonial
+  background: #34b881
+  color: white
+  padding: 50px 0
+
+  .lockup
+    font-size: 30px
+    width: 55%
+    margin: 0 auto
+
+
+  .avatar
+    border-radius: 50%
+    float: left
+    margin: 10px 20px 0 0
+
+  p
+    text-indent: -0.4em
+    margin: 0
+
+  cite
+    text-align: right
+    font-size: 18px
+    color: rgba(255,255,255,0.7)
+    display: block
+
+
+.page-body
+  margin: 80px auto
+  max-width: 600px
+
+  h2
+    color: #34b881
+
+
+
+.signup-modal
+  display: none
+
+  &.is-open
+    display: block
+
+  &--overlay
+    position: fixed
+    top: 0px
+    left: 0px
+    right: 0px
+    bottom: 0px
+    background: rgba(0,0,0,0.4)
+
+  &--card
+    position: fixed
+    top: 30%
+    left: 50%
+    max-width: 500px
+    background: white
+    box-shadow: 0px 3px 30px 10px rgba(0,0,0,0.5)
+    border-radius: 3px
+    transform: translate(-50%, -50%)
+    padding: 50px
+    text-align: center
+    animation: hello 0.5s linear
+
+  h3
+    margin: 0
+    padding: 0
+    color: #34b881
+
+  p
+    font-size: 12px
+    color: #999
+    margin-bottom: 30px
+
+  input
+    border: none
+    background: #eee
+    padding: 10px 20px
+    outline: none
+
+    &[type="submit"]
+      background: #34b881
+      color: white
+
+    &:focus
+      box-shadow: inset 0px 0px 0px 2px #34b881
+
+  .close
+    position: absolute
+    top: 6px
+    right: 10px
+    font-weight: bold
+    font-size: 20px
+    color: #999
+    cursor: pointer
+
+    &:hover
+      color: #666
+
+
+@keyframes hello
+  from
+    transform: translate(-50%, -30%)
+    opacity: 0
+  to
+    transform: translate(-50%, -50%)
+    opacity: 1
